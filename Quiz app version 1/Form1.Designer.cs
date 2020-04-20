@@ -44,7 +44,7 @@
             // 
             this.lblQuestion.Location = new System.Drawing.Point(46, 25);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(100, 23);
+            this.lblQuestion.Size = new System.Drawing.Size(311, 17);
             this.lblQuestion.TabIndex = 0;
             this.lblQuestion.Text = "Question";
             // 
@@ -56,7 +56,7 @@
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Location = new System.Drawing.Point(49, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(414, 185);
+            this.groupBox1.Size = new System.Drawing.Size(414, 195);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -112,6 +112,7 @@
             this.btnCheckAnswer.TabIndex = 2;
             this.btnCheckAnswer.Text = "Check answer";
             this.btnCheckAnswer.UseVisualStyleBackColor = true;
+            this.btnCheckAnswer.Click += new System.EventHandler(this.btnCheckAnswer_Click);
             // 
             // btnNext
             // 
@@ -121,6 +122,7 @@
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Next Question";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lblResult
             // 

@@ -20,11 +20,11 @@ namespace Quiz_app_version_1
         private List<Question1> QuizQuestions;
 
         //Keeps track of what question the app is currently asking, will be used to index QuizQuestions
-        private int CurrectQuestionNumber;
+        private int CurrentQuestionNumber;
 
         private int score = 0;
 
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -55,16 +55,16 @@ namespace Quiz_app_version_1
             btnCheckAnswer.Focus();
         }
 
-        private void DisplayQuestion(int questionIndex) 
+        private void DisplayQuestion(int questionIndex)
         {
             //Look up the question, usig questionIndex
             Question1 question = QuizQuestions[questionIndex];
 
             //Read the Answers property to get all list of the answer choices
             List<string> answers = question.AllAnswers;
-            
+
             //Deselect all the radio buttons
-            foreach (RadioButton rb in QuizRadioButtons) 
+            foreach (RadioButton rb in QuizRadioButtons)
             {
                 rb.Checked = false;
             }
@@ -73,15 +73,74 @@ namespace Quiz_app_version_1
             lblResult.Text = "???";
 
             //Use the answer to set the text for each RadioButton
-            for(int a  = 0; a < answers.Count; a++) 
+            for (int a = 0; a < answers.Count; a++)
             {
                 QuizRadioButtons[a].Text = answers[a];
             }
 
             // And display the question text
             lblQuestion.Text = question.QuestionText;
+        }
 
+        private void btnCheckAnswer_Click(object sender, EventArgs e)
+        {
+            Question1 currentQuestion = QuizQuestions[CurrentQuestionNumber];
 
+            //Which RadioButton was selected? The text of that radio button is the user's answer
+            string userAnswer = null;
+
+            foreach (RadioButton rb in QuizRadioButtons)
+            { 
+                if (rb.Checked == true)
+                {
+                    userAnswer = rb.Text;
+                }
+            } 
+            
+            if(userAnswer == null) 
+            {
+                MessageBox.Show("Pick an answer", "Error");
+                return;
+            }
+
+            if (currentQuestion.IsCorrect(userAnswer)) // Determine if the user's answer is the correct one.
+            {
+                lblResult.Text = "Correct";
+                score++; //Increase score
+            }
+            else 
+            {
+                lblResult.Text = $"Wrong. The correct answer is {currentQuestion.CorrectAnswer}";
+            }
+
+            //Disable btnCheckAnswer, enable btnNext, focus on btnNext
+            btnCheckAnswer.Enabled = false;
+            btnNext.Enabled = true;
+            btnNext.Focus();
+
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            //Advance to next question
+            CurrentQuestionNumber++;
+
+            //Are there more question to show?
+            if(CurrentQuestionNumber < QuizQuestions.Count) 
+            {
+                DisplayQuestion(CurrentQuestionNumber);
+                //Disable Next, enable Check Answer and focus on this button
+                btnNext.Enabled = false;
+                btnCheckAnswer.Enabled = true;
+                btnCheckAnswer.Focus();
+            }
+            else 
+            {
+                MessageBox.Show($"End of Quiz! Your score is {score}", "Quiz Over");
+                //Disable both buttons
+                btnNext.Enabled = false;
+                btnNext.Enabled = false;
+            }
         }
     }
 }
