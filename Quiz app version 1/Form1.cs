@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ Quiz App with Question Bank
+
+Get this code from GitHub, and make the following changes
+When the questions are created, set at least two questions to have a point value greater than 1
+In the Question class, modify the Points property get block to prevent negative values. Throw an exception if the Points property is set to a negative number
+When each question is shown, display the point value for that question in the form
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

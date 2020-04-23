@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,8 +43,9 @@ namespace Quiz_app_version_1
         // See ScoreCurrentQuestion method 
         public int Score { get; private set; }
 
-        public int Points { get; set; }
-
+        public int Points { get; } = -1;
+          
+            
         // Properties that compute their values from other fields/properties in the class
         public int AvailablePoints
         {
