@@ -34,15 +34,13 @@ namespace Quiz_app_version_1
 
             //Example questions - feel free to make up your own
 
-            //Create new Question with variables
-            string questionText = "What is fastest animal? ";
-            string questionAnswer = "Cheetah";
-            List<string> wrongAnwers = new List<string> { "Turtle", "Deer", "Snail",  };
-            Question1 q1 = new Question1(questionText, questionAnswer, wrongAnwers);
+            //Create new Question with variables and assign points
+            
+            Question1 q1 = new Question1("What is fastest animal? ", "Cheetah", new List<string> { "Turtle", "Deer", "Snail" }, 1);
 
             //Or create with literals
-            Question1 q2 = new Question1("What color is an elephant?", "Gray", new List<string> { "Yellow", "Green", "Red" });
-            Question1 q3 = new Question1("What does a cat say?", "Meom", new List<string> { "Quack", "Woof", "Hello" });
+            Question1 q2 = new Question1("What color is an elephant?", "Gray", new List<string> { "Yellow", "Green", "Red" }, 2);
+            Question1 q3 = new Question1("What does a cat say?", "Meom", new List<string> { "Quack", "Woof", "Hello" }, 5);
 
             //Add quiz questions to a list
             QuizQuestions = new List<Question1> { q1, q2, q3 };
@@ -141,6 +139,11 @@ namespace Quiz_app_version_1
                 btnNext.Enabled = false;
                 btnNext.Enabled = false;
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close(); //close app
         }
     }
 }

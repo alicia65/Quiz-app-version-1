@@ -38,7 +38,8 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.lblname = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtUName = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,20 +144,31 @@
             this.lblname.TabIndex = 5;
             this.lblname.Text = "Enter your name and press enter";
             // 
-            // txtName
+            // txtUName
             // 
-            this.txtName.Location = new System.Drawing.Point(345, 28);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(168, 22);
-            this.txtName.TabIndex = 6;
+            this.txtUName.Location = new System.Drawing.Point(345, 28);
+            this.txtUName.Name = "txtUName";
+            this.txtUName.ReadOnly = true;
+            this.txtUName.Size = new System.Drawing.Size(168, 22);
+            this.txtUName.TabIndex = 6;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(553, 370);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 37);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.txtUName);
             this.Controls.Add(this.lblname);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnNext);
@@ -185,7 +197,8 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Label lblname;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtUName;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 
