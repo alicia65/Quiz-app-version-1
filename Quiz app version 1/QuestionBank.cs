@@ -43,8 +43,7 @@ namespace Quiz_app_version_1
         // See ScoreCurrentQuestion method 
         public int Score { get; private set; }
 
-        public int Points { get; } = -1;
-          
+        public int Points { get; set; }        
             
         // Properties that compute their values from other fields/properties in the class
         public int AvailablePoints
@@ -97,7 +96,7 @@ namespace Quiz_app_version_1
         {
             if (!CurrentQuestion.Scored)
             {
-                if (CurrentQuestion.IsCorrect)
+                if (CurrentQuestion.IsCorrect())
                 {
                     Score += CurrentQuestion.Points;
                 }
