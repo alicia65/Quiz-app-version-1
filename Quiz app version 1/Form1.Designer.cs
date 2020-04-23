@@ -37,12 +37,14 @@
             this.btnCheckAnswer = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
+            this.lblname = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblQuestion
             // 
-            this.lblQuestion.Location = new System.Drawing.Point(46, 25);
+            this.lblQuestion.Location = new System.Drawing.Point(46, 74);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(311, 17);
             this.lblQuestion.TabIndex = 0;
@@ -54,9 +56,9 @@
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(49, 45);
+            this.groupBox1.Location = new System.Drawing.Point(49, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(414, 195);
+            this.groupBox1.Size = new System.Drawing.Size(414, 181);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -106,9 +108,9 @@
             // 
             // btnCheckAnswer
             // 
-            this.btnCheckAnswer.Location = new System.Drawing.Point(49, 257);
+            this.btnCheckAnswer.Location = new System.Drawing.Point(49, 296);
             this.btnCheckAnswer.Name = "btnCheckAnswer";
-            this.btnCheckAnswer.Size = new System.Drawing.Size(122, 56);
+            this.btnCheckAnswer.Size = new System.Drawing.Size(122, 42);
             this.btnCheckAnswer.TabIndex = 2;
             this.btnCheckAnswer.Text = "Check answer";
             this.btnCheckAnswer.UseVisualStyleBackColor = true;
@@ -118,7 +120,7 @@
             // 
             this.btnNext.Location = new System.Drawing.Point(49, 370);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(122, 51);
+            this.btnNext.Size = new System.Drawing.Size(122, 37);
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Next Question";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -126,17 +128,36 @@
             // 
             // lblResult
             // 
-            this.lblResult.Location = new System.Drawing.Point(231, 257);
+            this.lblResult.Location = new System.Drawing.Point(229, 296);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(232, 89);
+            this.lblResult.Size = new System.Drawing.Size(234, 42);
             this.lblResult.TabIndex = 4;
             this.lblResult.Text = "??";
+            // 
+            // lblname
+            // 
+            this.lblname.AutoSize = true;
+            this.lblname.Location = new System.Drawing.Point(49, 28);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(217, 17);
+            this.lblname.TabIndex = 5;
+            this.lblname.Text = "Enter your name and press enter";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(345, 28);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(168, 22);
+            this.txtName.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblname);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnCheckAnswer);
@@ -148,6 +169,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -162,6 +184,8 @@
         private System.Windows.Forms.Button btnCheckAnswer;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label lblname;
+        private System.Windows.Forms.TextBox txtName;
     }
 }
 

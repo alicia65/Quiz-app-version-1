@@ -35,9 +35,9 @@ namespace Quiz_app_version_1
             //Example questions - feel free to make up your own
 
             //Create new Question with variables
-            string questionText = "What is fastest animal?";
+            string questionText = "What is fastest animal? ";
             string questionAnswer = "Cheetah";
-            List<string> wrongAnwers = new List<string> { "Turtle", "Deer", "Snail" };
+            List<string> wrongAnwers = new List<string> { "Turtle", "Deer", "Snail",  };
             Question1 q1 = new Question1(questionText, questionAnswer, wrongAnwers);
 
             //Or create with literals

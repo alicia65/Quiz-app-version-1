@@ -10,19 +10,23 @@ namespace Quiz_app_version_1
     class Question1
     {
         //Constructor
-        public Question1(string questionText, string correctAnswer, List<String> wrongAnswers)
+        public Question1(string questionText, string correctAnswer, List<String> wrongAnswers, int points = 1)
         {
             QuestionText = questionText;
             CorrectAnswer = correctAnswer;
             WrongAnswers = wrongAnswers;
+            Points = points;
         }
 
-        //Auto Properties
+        //Auto- Implemented Properties
+        public string UserAnswer { get; set; }
         public string QuestionText { get; set; }
         public string CorrectAnswer { get; set; }
         public List<string> WrongAnswers { get; set; }
+        public int Points { get; set; }
+        public bool Scored { get; set; } = false; // An initial value
 
-
+        
         public List<string> AllAnswers
         {
             get
